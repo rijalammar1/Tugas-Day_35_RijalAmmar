@@ -68,8 +68,8 @@ export default function About() {
 
           <div className="max-w-xl space-y-6">
             <h3 className="text-xl md:text-2xl font-medium leading-relaxed text-white">
-              I am a front-end developer based in Indonesia with a strong
-              passion for building modern and user-friendly web experiences.
+              I am a front-end developer based in Malang with a strong passion
+              for building modern and user-friendly web experiences.
             </h3>
 
             <p className="text-gray-400 text-sm md:text-base leading-relaxed">
@@ -77,8 +77,7 @@ export default function About() {
               Website and Front-End Developer. Skilled in building web and
               mobile applications, crafting responsive interfaces, and
               collaborating within development teams using modern software
-              development workflows. Currently open to work as a Front-End
-              Developer.
+              development workflows.
             </p>
           </div>
         </div>

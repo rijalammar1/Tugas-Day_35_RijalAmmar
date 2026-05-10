@@ -11,7 +11,7 @@ export default function Hero() {
           </h2>
 
           <p className="text-gray-400 text-sm md:text-base">
-            An Indonesia-based front-end developer passionate about creating
+            An Malang-based front-end developer passionate about creating
             accessible, user-friendly, and high-performance web experiences.
           </p>
 
