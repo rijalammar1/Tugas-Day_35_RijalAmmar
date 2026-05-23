@@ -6,7 +6,6 @@ export const experiences = [
     description: [
       " Understanding the concepts of REST API and JSON, 50% in understanding the concepts of REST API and JSON",
       "Collaborating with Backend Engineers to integrate the APIs that have been created, contributing 50% to  API integration",
-      "Handling API integration and data processing",
       "Implementing designs into code using the Laravel, Flutter, Next.js, and Tailwind CSS programming languages, contributing 100% to the implementation of front-end development tasks",
     ],
   },
