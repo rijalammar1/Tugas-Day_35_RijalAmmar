@@ -4,10 +4,10 @@ export const experiences = [
     period: "Aug 2023 – Dec 2023",
     company: "ADS Digital Partner (PT. Adma Digital Solusi)",
     description: [
-      "Understanding REST API and JSON concepts",
-      "Collaborating with Backend Engineers to integrate APIs",
+      " Understanding the concepts of REST API and JSON, 50% in understanding the concepts of REST API and JSON",
+      "Collaborating with Backend Engineers to integrate the APIs that have been created, contributing 50% to  API integration",
       "Handling API integration and data processing",
-      "Implementing UI into code using Laravel, Flutter, Next.js, and Tailwind CSS",
+      "Implementing designs into code using the Laravel, Flutter, Next.js, and Tailwind CSS programming languages, contributing 100% to the implementation of front-end development tasks",
     ],
   },
   {
@@ -15,9 +15,9 @@ export const experiences = [
     period: "Dec 2018 – Nov 2019",
     company: "PT. Universal Big Data",
     description: [
-      "Developed Enotaris website using PHP, HTML, CodeIgniter, AJAX, and SQL Database",
-      "Deployed and maintained client installations using TeamViewer",
-      "Created tutorial videos using Camtasia for user onboarding",
+      "Designed and implemented an Enotaris website using PHP, HTML, CI, AJAX, SQL Database, contributed 100% to the implementation of web developer tasks",
+      "Installing the Enotaris website for clients and providing follow-up if clients encounter difficulties in running the Enotaris website using TeamViewer software, contributing 100% to providing follow-up to clients.",
+      "Creating tutorial videos on how to run the Enotaris website using Camtasia software, contributing 100% to the production of tutorial videos.",
     ],
   },
 ]
