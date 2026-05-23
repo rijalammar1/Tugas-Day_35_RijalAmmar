@@ -1,8 +1,8 @@
 export const experiences = [
   {
     title: "Frontend Developer",
-    period: "Aug 2023 – Dec 2023",
-    company: "ADS Digital Partner (PT. Adma Digital Solusi)",
+    period: "Aug 2023 - Dec 2023",
+    company: "ADS Digital Partner",
     description: [
       " Understanding the concepts of REST API and JSON, 50% in understanding the concepts of REST API and JSON",
       "Collaborating with Backend Engineers to integrate the APIs that have been created, contributing 50% to  API integration",
@@ -12,7 +12,7 @@ export const experiences = [
   },
   {
     title: "Web Developer",
-    period: "Dec 2018 – Nov 2019",
+    period: "Dec 2018 - Nov 2019",
     company: "PT. Universal Big Data",
     description: [
       "Designed and implemented an Enotaris website using PHP, HTML, CI, AJAX, SQL Database, contributed 100% to the implementation of web developer tasks",
