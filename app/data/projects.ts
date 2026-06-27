@@ -1,6 +1,33 @@
-import { Project } from "@/types"
+import { Project } from "@/types";
 
 export const projects: Project[] = [
+  {
+    title: "Basement Memories",
+    description:
+      "Developed a modern social media photo sharing application that enables users to share posts, upload stories, interact through likes and comments, manage profiles, and discover other users. The frontend was built with Next.js and TypeScript, while the application integrates with a REST API for authentication, post management, story features, user profiles, and social interactions.",
+    image: "/images/project5.png",
+    tag: "Final Project at DiBimbing Botcamp",
+    year: "2026",
+    role: "Frontend Developer",
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "REST API",
+      "Axios",
+    ],
+    links: [
+      {
+        label: "Frontend",
+        url: "https://github.com/rijalammar1/Basement-Memories",
+      },
+      {
+        label: "Website",
+        url: "https://basement-memories.vercel.app/",
+      },
+    ],
+  },
   {
     title: "Blockchain-Based Crowdfunding Management Application",
     description:
@@ -54,4 +81,4 @@ export const projects: Project[] = [
       },
     ],
   },
-]
+];
