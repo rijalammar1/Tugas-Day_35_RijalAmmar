@@ -8,7 +8,7 @@ export const education = [
       "Built responsive and user-friendly websites using HTML, CSS, Tailwind CSS, Git, and modern frontend development workflows.",
       "Developed scalable web applications with React.js, Next.js, and Redux, while applying debugging, deployment, and performance optimization best practices.",
       "Applied UI/UX principles using Figma, optimized website performance, and implemented SEO best practices to enhance user experience.",
-      "Awarded Best Final Project by DiBimbing for delivering the top-performing capstone project, demonstrating strong technical execution, problem-solving, and teamwork.",
+      "Awarded Best Final Project by DiBimbing for delivering the top-performing capstone project, demonstrating strong technical execution and problem-solving.",
       "Recognized as the Most Active Student by DiBimbing for outstanding participation, collaboration, and consistent engagement throughout the bootcamp.",
     ],
   },
