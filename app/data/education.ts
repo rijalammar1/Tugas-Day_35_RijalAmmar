@@ -2,7 +2,7 @@ export const education = [
   {
     title: "Front End Web Development Bootcamp",
     school: "Dibimbing",
-    period: "Dec 2024 – Jul 2025",
+    period: "Dec 2025 – Jul 2026",
     description: [
       "Developed strong foundations in JavaScript, including ES6+, DOM manipulation, asynchronous programming, and API integration to create interactive web applications.",
       "Designed and implemented responsive web interfaces using HTML, CSS, Tailwind CSS, and modern frontend development practices.",
