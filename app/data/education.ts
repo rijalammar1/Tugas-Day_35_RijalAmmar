@@ -4,12 +4,12 @@ export const education = [
     school: "Dibimbing",
     period: "Dec 2025 – Jul 2025",
     description: [
-      "Mastered JavaScript fundamentals, DOM manipulation, asynchronous programming, and API integration to build dynamic and interactive web applications.",
-      "Built responsive and user-friendly websites using HTML, CSS, Tailwind CSS, Git, and modern frontend development workflows.",
-      "Developed scalable web applications with React.js, Next.js, and Redux, while applying debugging, deployment, and performance optimization best practices.",
-      "Applied UI/UX principles using Figma, optimized website performance, and implemented SEO best practices to enhance user experience.",
-      "Awarded Best Final Project by DiBimbing for delivering the top-performing capstone project, demonstrating strong technical execution and problem-solving.",
-      "Recognized as the Most Active Student by DiBimbing for outstanding participation, collaboration, and consistent engagement throughout the bootcamp.",
+      "Developed strong foundations in JavaScript, including ES6+, DOM manipulation, asynchronous programming, and API integration to create interactive web applications.",
+      "Designed and implemented responsive web interfaces using HTML, CSS, Tailwind CSS, and modern frontend development practices.",
+      "Built scalable frontend applications using React.js, Next.js, and Redux with a focus on clean code, maintainability, debugging, and performance optimization.",
+      "Applied UI/UX principles through Figma designs, improving user experience, website accessibility, SEO performance, and overall application quality.",
+      "Achieved Best Final Project Award from DiBimbing for developing a high-quality capstone project that demonstrated technical proficiency, problem-solving skills, and software development practices.",
+      "Selected as the Most Active Student at DiBimbing for consistently contributing to discussions, completing assignments, and actively participating throughout the learning program.",
     ],
   },
   {
