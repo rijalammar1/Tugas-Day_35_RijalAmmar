@@ -1,22 +1,22 @@
 export const experiences = [
   {
-    title: "Frontend Developer",
+    title: "Frontend Developer Intern",
     period: "Aug 2023 - Dec 2023",
     company: "ADS Digital Partner",
     description: [
-      " Understanding the concepts of REST API and JSON, 50% in understanding the concepts of REST API and JSON",
-      "Collaborating with Backend Engineers to integrate the APIs that have been created, contributing 50% to  API integration",
-      "Implementing designs into code using the Laravel, Flutter, Next.js, and Tailwind CSS programming languages, contributing 100% to the implementation of front-end development tasks",
+      "Understood REST API and JSON concepts to support frontend-backend integration.",
+      "Collaborated with Backend Engineers to integrate REST APIs into web and mobile applications.",
+      "Developed responsive user interfaces using Laravel, Flutter, Next.js, and Tailwind CSS.",
     ],
   },
   {
-    title: "Web Developer",
+    title: "Web Developer Intern",
     period: "Dec 2018 - Nov 2019",
     company: "PT. Universal Big Data",
     description: [
-      "Designed and implemented an Enotaris website using PHP, HTML, CI, AJAX, SQL Database, contributed 100% to the implementation of web developer tasks",
-      "Installing the Enotaris website for clients and providing follow-up if clients encounter difficulties in running the Enotaris website using TeamViewer software, contributing 100% to providing follow-up to clients.",
-      "Creating tutorial videos on how to run the Enotaris website using Camtasia software, contributing 100% to the production of tutorial videos.",
+      "Designed and developed the Enotaris web application using PHP, HTML, CodeIgniter, AJAX, and SQL Database.",
+      "Installed and configured the Enotaris application for clients while providing remote technical support using TeamViewer.",
+      "Created tutorial videos with Camtasia to help clients onboard and use the Enotaris application effectively.",
     ],
   },
-]
+];
