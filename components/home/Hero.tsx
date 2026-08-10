@@ -1,5 +1,5 @@
-import Image from "next/image"
-import Button from "../common/Button"
+import Image from "next/image";
+import Button from "../common/Button";
 
 export default function Hero() {
   return (
@@ -16,7 +16,7 @@ export default function Hero() {
           </p>
 
           <div className="flex items-center gap-4">
-            <Button label="Download CV" href="/cv/resume.pdf" />
+            <Button label="Download CV" href="/cv/CV_RijalAmmar.pdf" />
 
             <div className="flex gap-3">
               <a
@@ -64,5 +64,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
