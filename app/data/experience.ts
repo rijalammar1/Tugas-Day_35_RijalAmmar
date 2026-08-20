@@ -1,5 +1,15 @@
 export const experiences = [
   {
+    title: "Web Developer Intern",
+    period: "Dec 2018 - Nov 2019",
+    company: "PT. Universal Big Data",
+    description: [
+      " Designed and implemented an Enotaris website using PHP, HTML, CI, AJAX, SQL Database, contributed 100% to the implementation of web developer tasks",
+      "Installing the Enotaris website for clients and providing follow-up if clients encounter difficulties in running the Enotaris website using TeamViewer software, contributing 100% to providing follow-up to clients.",
+      "Creating tutorial videos on how to run the Enotaris website using Camtasia software, contributing 100% to the production of tutorial videos.",
+    ],
+  },
+  {
     title: "Frontend Developer Intern",
     period: "Aug 2023 - Dec 2023",
     company: "ADS Digital Partner",
@@ -10,13 +20,12 @@ export const experiences = [
     ],
   },
   {
-    title: "Web Developer Intern",
-    period: "Dec 2018 - Nov 2019",
-    company: "PT. Universal Big Data",
+    title: "Frontend Developer Intern",
+    period: "Jul 2026 - Present",
+    company: "SOVIA",
     description: [
-      " Designed and implemented an Enotaris website using PHP, HTML, CI, AJAX, SQL Database, contributed 100% to the implementation of web developer tasks",
-      "Installing the Enotaris website for clients and providing follow-up if clients encounter difficulties in running the Enotaris website using TeamViewer software, contributing 100% to providing follow-up to clients.",
-      "Creating tutorial videos on how to run the Enotaris website using Camtasia software, contributing 100% to the production of tutorial videos.",
+      "Understanding the concepts and basic usage of WordPress, TailPress, and Laragon, with 100% proficiency in understanding their fundamental concepts and usage.",
+      "Developing the Go Tumbler website based on the provided design, including slicing and implementing its layouts and components in a local development environment with 100% completion.",
     ],
   },
 ];
