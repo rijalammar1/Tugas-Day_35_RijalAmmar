@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   FaHtml5,
@@ -9,18 +9,19 @@ import {
   FaGitlab,
   FaNodeJs,
   FaGitAlt,
-} from "react-icons/fa"
+} from "react-icons/fa";
 
 import {
   SiNextdotjs,
   SiTailwindcss,
-  SiFigma,
   SiExpress,
   SiFlutter,
   SiDart,
   SiClickup,
   SiTypescript,
-} from "react-icons/si"
+  SiWordpress,
+  SiPhp,
+} from "react-icons/si";
 
 export default function About() {
   const skillGroups = [
@@ -33,32 +34,46 @@ export default function About() {
         { name: "TypeScript", icon: SiTypescript },
         { name: "React", icon: FaReact },
         { name: "Next.js", icon: SiNextdotjs },
-        { name: "Tailwind", icon: SiTailwindcss },
-        { name: "Flutter", icon: SiFlutter },
-        { name: "Dart", icon: SiDart },
+        { name: "Tailwind CSS", icon: SiTailwindcss },
+        { name: "PHP", icon: SiPhp },
+      ],
+    },
+    {
+      title: "WordPress",
+      items: [
+        { name: "WordPress", icon: SiWordpress },
+        { name: "TailPress", icon: SiTailwindcss },
       ],
     },
     {
       title: "Backend",
       items: [
         { name: "Node.js", icon: FaNodeJs },
-        { name: "Express", icon: SiExpress },
+        { name: "Express.js", icon: SiExpress },
+      ],
+    },
+    {
+      title: "Mobile",
+      items: [
+        { name: "Flutter", icon: SiFlutter },
+        { name: "Dart", icon: SiDart },
       ],
     },
     {
       title: "Tools",
       items: [
+        { name: "Git", icon: FaGitAlt },
         { name: "GitHub", icon: FaGithub },
         { name: "GitLab", icon: FaGitlab },
-        { name: "Git", icon: FaGitAlt },
         { name: "ClickUp", icon: SiClickup },
       ],
     },
-  ]
+  ];
 
   return (
     <section id="about" className="border-t border-gray-800 py-24">
       <div className="max-w-6xl mx-auto px-6 md:px-0 space-y-20">
+        {/* About */}
         <div className="grid md:grid-cols-2 gap-16 items-start">
           <div>
             <h2 className="text-3xl md:text-5xl font-bold uppercase leading-tight">
@@ -82,6 +97,7 @@ export default function About() {
           </div>
         </div>
 
+        {/* Capabilities */}
         <div className="space-y-12">
           <div>
             <h3 className="text-2xl md:text-3xl font-semibold uppercase">
@@ -89,7 +105,7 @@ export default function About() {
             </h3>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skillGroups.map((group, i) => (
               <div
                 key={i}
@@ -101,7 +117,7 @@ export default function About() {
 
                 <div className="flex flex-wrap gap-3">
                   {group.items.map((skill, idx) => {
-                    const Icon = skill.icon
+                    const Icon = skill.icon;
 
                     return (
                       <div
@@ -112,7 +128,7 @@ export default function About() {
 
                         <span className="text-gray-300">{skill.name}</span>
                       </div>
-                    )
+                    );
                   })}
                 </div>
               </div>
@@ -121,5 +137,5 @@ export default function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }
