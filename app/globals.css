@@ -1,15 +1,53 @@
 @import "tailwindcss";
 
+/* Varian light: dipakai buat class kayak light:brightness-0 */
+@custom-variant light (&:where([data-theme="light"], [data-theme="light"] *));
+
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 :root {
-  --background: #0a0a0a;   
+  --background: #0a0a0a;
   --foreground: #ededed;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Tiap section ber-id setinggi layar dikurangi navbar (h-20 + border = 81px),
+   dan berhenti pas di bawah navbar waktu diklik dari menu */
+section[id] {
+  min-height: calc(100svh - 81px);
+  scroll-margin-top: 81px;
+}
+
+/* ---------- Light mode ---------- */
+html[data-theme="light"] {
+  color-scheme: light;
+
+  --background: #ffffff;
+  --foreground: #18181b;
+
+  /* Remap warna Tailwind, komponen lama nggak perlu diubah */
+  --color-black: #ffffff;
+  --color-white: #18181b;
+
+  --color-zinc-900: #f4f4f5;
+  --color-zinc-800: #e4e4e7;
+
+  --color-gray-800: #e5e7eb;
+  --color-gray-700: #d1d5db;
+  --color-gray-500: #6b7280;
+  --color-gray-400: #4b5563;
+  --color-gray-300: #374151;
+
+  --color-lime-400: #65a30d;
+  --color-lime-300: #84cc16;
 }

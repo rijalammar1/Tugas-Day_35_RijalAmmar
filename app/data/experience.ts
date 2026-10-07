@@ -4,7 +4,7 @@ export const experiences = [
     period: "Dec 2018 - Nov 2019",
     company: "PT. Universal Big Data",
     description: [
-      " Designed and implemented an Enotaris website using PHP, HTML, CI, AJAX, SQL Database, contributed 100% to the implementation of web developer tasks",
+      "Designed and implemented an Enotaris website using PHP, HTML, CI, AJAX, SQL Database, contributed 100% to the implementation of web developer tasks",
       "Installing the Enotaris website for clients and providing follow-up if clients encounter difficulties in running the Enotaris website using TeamViewer software, contributing 100% to providing follow-up to clients.",
       "Creating tutorial videos on how to run the Enotaris website using Camtasia software, contributing 100% to the production of tutorial videos.",
     ],
@@ -21,11 +21,12 @@ export const experiences = [
   },
   {
     title: "Frontend Developer Intern",
-    period: "Jul 2026 - Present",
+    period: "Jul 2026 - Oct 2026",
     company: "SOVIA",
     description: [
       "Understanding the concepts and basic usage of WordPress, TailPress, and Laragon, with 100% proficiency in understanding their fundamental concepts and usage.",
       "Developing the Go Tumbler website based on the provided design, including slicing and implementing its layouts and components in a local development environment with 100% completion.",
+      "Optimizing the Go Tumbler websites performance for both mobile and desktop devices, achieving Lighthouse scores of 90+ across all evaluated categories with 100% proficiency in optimizing web performance.",
     ],
   },
 ];
