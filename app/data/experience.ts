@@ -1,32 +1,31 @@
 export const experiences = [
   {
-    title: "Web Developer Intern",
-    period: "Dec 2018 - Nov 2019",
-    company: "PT. Universal Big Data",
-    description: [
-      "Designed and implemented an Enotaris website using PHP, HTML, CI, AJAX, SQL Database, contributed 100% to the implementation of web developer tasks",
-      "Installing the Enotaris website for clients and providing follow-up if clients encounter difficulties in running the Enotaris website using TeamViewer software, contributing 100% to providing follow-up to clients.",
-      "Creating tutorial videos on how to run the Enotaris website using Camtasia software, contributing 100% to the production of tutorial videos.",
-    ],
-  },
-  {
     title: "Frontend Developer Intern",
-    period: "Aug 2023 - Dec 2023",
-    company: "ADS Digital Partner",
-    description: [
-      "Contributed approximately 50% to understanding and implementing REST APIs and JSON within the project.",
-      "Contributed approximately 50% to integrating REST APIs in collaboration with Backend Engineers.",
-      "Completed 100% of assigned front-end development tasks by implementing UI designs using Laravel, Flutter, Next.js, and Tailwind CSS.",
-    ],
-  },
-  {
-    title: "Frontend Developer Intern",
-    period: "Jul 2026 - Oct 2026",
+    period: "Jul 2026 – Oct 2026",
     company: "SOVIA",
     description: [
-      "Understanding the concepts and basic usage of WordPress, TailPress, and Laragon, with 100% proficiency in understanding their fundamental concepts and usage.",
-      "Developing the Go Tumbler website based on the provided design, including slicing and implementing its layouts and components in a local development environment with 100% completion.",
-      "Optimizing the Go Tumbler websites performance for both mobile and desktop devices, achieving Lighthouse scores of 90+ across all evaluated categories with 100% proficiency in optimizing web performance.",
+      "Learned and applied WordPress, TailPress, and Laragon to set up a local development workflow for a client theme project.",
+      "Built the Go Tumbler website from the provided design, slicing and implementing its layouts and components as a WordPress theme with TailPress and Tailwind CSS, including WooCommerce shop pages, a logo marquee slider, and a WhatsApp contact popup.",
+      "Optimized the Go Tumbler website's performance on both mobile and desktop, reaching Lighthouse scores of 90+ across all categories.",
+    ],
+  },
+  {
+    title: "Frontend Developer Intern",
+    period: "Aug 2023 – Dec 2023",
+    company: "ADS Digital Partner",
+    description: [
+      "Implemented UI designs into working interfaces using Laravel, Flutter, Next.js, and Tailwind CSS, completing all assigned front-end tasks.",
+      "Collaborated with backend engineers to understand and integrate REST APIs and JSON data into the project.",
+    ],
+  },
+  {
+    title: "Web Developer Intern",
+    period: "Dec 2018 – Nov 2019",
+    company: "PT. Universal Big Data",
+    description: [
+      "Designed and implemented the Enotaris website using PHP, HTML, CodeIgniter, AJAX, and SQL.",
+      "Installed the Enotaris website for clients and provided remote follow-up through TeamViewer whenever they ran into problems.",
+      "Produced tutorial videos with Camtasia that showed clients how to run the Enotaris website.",
     ],
   },
 ];

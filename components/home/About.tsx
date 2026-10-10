@@ -23,7 +23,13 @@ import {
   SiTypescript,
   SiWordpress,
   SiPhp,
+  SiLaravel,
+  SiRedux,
+  SiWoocommerce,
+  SiFigma,
 } from "react-icons/si";
+
+import { TbApi } from "react-icons/tb";
 
 type Skill = {
   name: string;
@@ -90,60 +96,67 @@ function Reveal({
   );
 }
 
+/* ---------- Data ---------- */
+
+const skillGroups: SkillGroup[] = [
+  {
+    title: "Frontend",
+    className: "md:col-span-2 lg:row-span-2",
+    items: [
+      { name: "HTML", icon: FaHtml5 },
+      { name: "CSS", icon: FaCss3Alt },
+      { name: "JavaScript", icon: FaJs },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "React", icon: FaReact },
+      { name: "Next.js", icon: SiNextdotjs },
+      { name: "Redux", icon: SiRedux },
+      { name: "Tailwind CSS", icon: SiTailwindcss },
+    ],
+  },
+  {
+    title: "WordPress",
+    className: "",
+    items: [
+      { name: "WordPress", icon: SiWordpress },
+      { name: "TailPress", icon: SiTailwindcss },
+      { name: "WooCommerce", icon: SiWoocommerce },
+    ],
+  },
+  {
+    title: "Backend",
+    className: "",
+    items: [
+      { name: "Node.js", icon: FaNodeJs },
+      { name: "Express.js", icon: SiExpress },
+      { name: "PHP", icon: SiPhp },
+      { name: "Laravel", icon: SiLaravel },
+      { name: "REST API", icon: TbApi },
+    ],
+  },
+  {
+    title: "Mobile",
+    className: "",
+    items: [
+      { name: "Flutter", icon: SiFlutter },
+      { name: "Dart", icon: SiDart },
+    ],
+  },
+  {
+    title: "Tools",
+    className: "lg:col-span-2",
+    items: [
+      { name: "Git", icon: FaGitAlt },
+      { name: "GitHub", icon: FaGithub },
+      { name: "GitLab", icon: FaGitlab },
+      { name: "Figma", icon: SiFigma },
+      { name: "ClickUp", icon: SiClickup },
+    ],
+  },
+];
+
 /* ---------- Section ---------- */
 
 export default function About() {
-  const skillGroups: SkillGroup[] = [
-    {
-      title: "Frontend",
-      className: "md:col-span-2 lg:row-span-2",
-      items: [
-        { name: "HTML", icon: FaHtml5 },
-        { name: "CSS", icon: FaCss3Alt },
-        { name: "JavaScript", icon: FaJs },
-        { name: "TypeScript", icon: SiTypescript },
-        { name: "React", icon: FaReact },
-        { name: "Next.js", icon: SiNextdotjs },
-        { name: "Tailwind CSS", icon: SiTailwindcss },
-        { name: "PHP", icon: SiPhp },
-      ],
-    },
-    {
-      title: "WordPress",
-      className: "",
-      items: [
-        { name: "WordPress", icon: SiWordpress },
-        { name: "TailPress", icon: SiTailwindcss },
-      ],
-    },
-    {
-      title: "Backend",
-      className: "",
-      items: [
-        { name: "Node.js", icon: FaNodeJs },
-        { name: "Express.js", icon: SiExpress },
-      ],
-    },
-    {
-      title: "Mobile",
-      className: "",
-      items: [
-        { name: "Flutter", icon: SiFlutter },
-        { name: "Dart", icon: SiDart },
-      ],
-    },
-    {
-      title: "Tools",
-      className: "lg:col-span-2",
-      items: [
-        { name: "Git", icon: FaGitAlt },
-        { name: "GitHub", icon: FaGithub },
-        { name: "GitLab", icon: FaGitlab },
-        { name: "ClickUp", icon: SiClickup },
-      ],
-    },
-  ];
-
   return (
     // reducedMotion="user": animasi otomatis dimatiin kalau OS user set "reduce motion"
     <MotionConfig reducedMotion="user">
@@ -164,8 +177,8 @@ export default function About() {
               </h3>
 
               <p className="text-gray-400 text-sm md:text-base leading-relaxed">
-                Computer Science graduate with 1.5 years of experience as a
-                Website and Front-End Developer. Skilled in building web and
+                Informatics Engineering graduate with 1.5 years of experience as
+                a Website and Front-End Developer. Skilled in building web and
                 mobile applications, crafting responsive interfaces, and
                 collaborating within development teams using modern software
                 development workflows.
