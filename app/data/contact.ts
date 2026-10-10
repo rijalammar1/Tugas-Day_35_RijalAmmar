@@ -1,5 +1,5 @@
 export const contact = {
-  email: "rijaltn13@email.com",
+  email: "rijaltn13@gmail.com",
   socials: [
     {
       name: "LinkedIn",
@@ -17,4 +17,4 @@ export const contact = {
       icon: "/images/icons/instagram.png",
     },
   ],
-}
+};

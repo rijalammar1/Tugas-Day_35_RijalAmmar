@@ -2,11 +2,36 @@ import { Project } from "@/types";
 
 export const projects: Project[] = [
   {
+    title: "Go Tumbler",
+    description:
+      "Developed a premium custom tumbler and merchandise website for a client as a WordPress theme, implementing the provided design from slicing to a fully working local build. Built the layouts and reusable components with TailPress and Tailwind CSS, including the WooCommerce shop and product pages, a logo marquee slider, and a WhatsApp contact popup with form validation. Optimized performance for both mobile and desktop.",
+    image: "/images/project6.png",
+    tag: "Internship Project at SOVIA",
+    year: "2026",
+    role: "Frontend Developer",
+    // client: "Go Tumbler",
+    techStack: [
+      "WordPress",
+      "TailPress",
+      "Tailwind CSS",
+      "WooCommerce",
+      "Vite",
+      "Swiper.js",
+      "PHP",
+    ],
+    links: [
+      {
+        label: "Frontend",
+        url: "https://github.com/rijalammar1/gotumbler-tailpress",
+      },
+    ],
+  },
+  {
     title: "Basement Memories",
     description:
       "Developed a modern social media photo sharing application that enables users to share posts, upload stories, interact through likes and comments, manage profiles, and discover other users. The frontend was built with Next.js and TypeScript, while the application integrates with a REST API for authentication, post management, story features, user profiles, and social interactions.",
     image: "/images/project5.png",
-    tag: "Final Project at DiBimbing Botcamp",
+    tag: "Final Project at DiBimbing Bootcamp",
     year: "2026",
     role: "Frontend Developer",
     techStack: [

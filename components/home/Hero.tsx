@@ -14,7 +14,7 @@ const STATUS_TEXT = "Open to work";
 /* Angka ringkas. Ganti isinya sesuai pilihan di bawah kalau mau */
 const stats = [
   { value: "1.5+", label: "Years experience" },
-  { value: "56", label: "Projects" },
+  { value: "5", label: "Projects" },
   { value: "1×", label: "Best Final Project award" },
 ];
 
