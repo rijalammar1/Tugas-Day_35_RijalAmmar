@@ -139,7 +139,7 @@ export default function Contact() {
               <p>
                 Download my{" "}
                 <a
-                  href="/cv/resume.pdf"
+                  href="/cv/CV_RijalAmmar.pdf"
                   download
                   className="text-white underline decoration-lime-400"
                 >
