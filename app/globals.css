@@ -22,10 +22,19 @@ body {
 }
 
 /* Tiap section ber-id setinggi layar dikurangi navbar (h-20 + border = 81px),
-   dan berhenti pas di bawah navbar waktu diklik dari menu */
+   kontennya di-center secara vertikal, dan berhenti pas di bawah navbar
+   waktu diklik dari menu */
 section[id] {
+  display: flex;
+  align-items: center;
   min-height: calc(100svh - 81px);
   scroll-margin-top: 81px;
+}
+
+/* Wrapper di dalam section harus tetap selebar section,
+   kalau nggak dia nyusut ngikutin isi begitu section jadi flex */
+section[id] > div {
+  width: 100%;
 }
 
 /* ---------- Light mode ---------- */
