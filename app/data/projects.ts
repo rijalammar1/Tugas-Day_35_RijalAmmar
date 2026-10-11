@@ -79,7 +79,7 @@ export const projects: Project[] = [
     description:
       "Developed a mobile application using Flutter (Dart) to support operational needs and data management within a business environment. Focused on building responsive and user-friendly interfaces, improving application performance, and optimizing overall user experience. Collaborated with back-end services for data integration and system functionality.",
     image: "/images/project2.png",
-    tag: "Internship Project",
+    tag: "Internship Project at ADS Digital Partner",
     year: "2023",
     role: "Front End Developer",
     techStack: ["Flutter", "Dart"],
@@ -95,7 +95,7 @@ export const projects: Project[] = [
     description:
       "Developed a web-based platform for information sharing and digital services using Next.js for front-end development and Laravel for back-end development. Responsible for implementing application features, integrating APIs, and ensuring system performance, responsiveness, and scalability. The platform was designed to provide an optimal user experience while supporting client business needs.",
     image: "/images/project3.png",
-    tag: "Internship Project",
+    tag: "Internship Project at ADS Digital Partner ",
     year: "2023",
     role: "Front End Developer",
     techStack: ["Next.js", "React", "Tailwind CSS"],
