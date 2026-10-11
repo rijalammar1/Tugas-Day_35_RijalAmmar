@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, MotionConfig, type Variants } from "motion/react";
 import Button from "../common/Button";
+import { projects } from "@/app/data/projects";
+import { certificates } from "@/app/data/certificates";
 
 /* h-20 (80px) + border 1px */
 const NAVBAR_HEIGHT = 81;
@@ -11,11 +13,11 @@ const NAVBAR_HEIGHT = 81;
 /* Ganti teks ini, atau hapus blok badge-nya kalau lagi nggak cari kerja */
 const STATUS_TEXT = "Open to work";
 
-/* Angka ringkas. Ganti isinya sesuai pilihan di bawah kalau mau */
+/* Angka ringkas. Jumlah project dan sertifikat dihitung otomatis dari data */
 const stats = [
   { value: "1.5+", label: "Years experience" },
-  { value: "5", label: "Projects" },
-  { value: "1×", label: "Best Final Project award" },
+  { value: String(projects.length), label: "Projects" },
+  { value: String(certificates.length), label: "Certificates" },
 ];
 
 /* Kolom teks: anak-anaknya muncul bergantian */

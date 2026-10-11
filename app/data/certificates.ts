@@ -16,6 +16,15 @@ export type Certificate = {
 export const certificates: Certificate[] = [
   {
     title: "Frontend Developer Internship",
+    issuer: "SOVIA",
+    date: "Jul 2026 – Oct 2026",
+    description:
+      "Built the Go Tumbler WordPress theme from the provided design with TailPress and Tailwind CSS, and optimized its performance for mobile and desktop.",
+    image:
+      "/images/certificates/sertifikat Rijal Ammar Irsyadul Ibad_page-0001",
+  },
+  {
+    title: "Frontend Developer Internship",
     issuer: "ADS Digital Partner (PT. Adma Digital Solusi)",
     date: "Aug 2023 – Dec 2023",
     description:
