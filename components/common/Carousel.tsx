@@ -37,6 +37,17 @@ const itemVariants: Variants = {
 const arrowButton =
   "flex h-10 w-10 items-center justify-center rounded-full border border-gray-700 text-gray-400 transition-colors hover:border-lime-400/60 hover:text-lime-400 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-gray-700 disabled:hover:text-gray-400 cursor-pointer";
 
+/* Lebar satu langkah geser: lebar card + jarak antar card */
+function getStep(el: HTMLElement) {
+  const first = el.firstElementChild as HTMLElement | null;
+  const columnGap = parseFloat(getComputedStyle(el).columnGap) || 0;
+  return first ? first.offsetWidth + columnGap : el.clientWidth;
+}
+
+function prefersReducedMotion() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
 type CarouselProps<T> = {
   items: T[];
   /** Key unik tiap item */
@@ -54,6 +65,8 @@ type CarouselProps<T> = {
   /** Class untuk baris header (default kasih jarak ke bawah) */
   headerClassName?: string;
   className?: string;
+  /** Titik indikator di bawah carousel */
+  showDots?: boolean;
 };
 
 export default function Carousel<T>({
@@ -66,49 +79,67 @@ export default function Carousel<T>({
   gap = 24,
   headerClassName = "mb-12",
   className = "",
+  showDots = true,
 }: CarouselProps<T>) {
   const trackRef = useRef<HTMLDivElement>(null);
+
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(false);
+  const [count, setCount] = useState(1);
+  const [index, setIndex] = useState(0);
 
-  const updateArrows = useCallback(() => {
+  const updateState = useCallback(() => {
     const el = trackRef.current;
     if (!el) return;
 
+    const step = getStep(el);
+    const maxScroll = el.scrollWidth - el.clientWidth;
+
+    // Jumlah posisi geser yang beneran bisa dicapai
+    const nextCount =
+      maxScroll > 4 && step > 0 ? Math.ceil((maxScroll - 4) / step) + 1 : 1;
+
     setCanPrev(el.scrollLeft > 4);
-    setCanNext(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+    setCanNext(el.scrollLeft < maxScroll - 4);
+    setCount(nextCount);
+    setIndex(
+      step > 0 ? Math.min(Math.round(el.scrollLeft / step), nextCount - 1) : 0,
+    );
   }, []);
 
-  // Hitung ulang status panah saat ukuran track atau jumlah item berubah
+  // Hitung ulang saat ukuran track atau jumlah item berubah
   useEffect(() => {
     const el = trackRef.current;
     if (!el) return;
 
-    updateArrows();
+    updateState();
 
-    const observer = new ResizeObserver(updateArrows);
+    const observer = new ResizeObserver(updateState);
     observer.observe(el);
     return () => observer.disconnect();
-  }, [updateArrows, items.length]);
+  }, [updateState, items.length]);
 
   const scrollByItem = (direction: 1 | -1) => {
     const el = trackRef.current;
     if (!el) return;
 
-    const first = el.firstElementChild as HTMLElement | null;
-    const columnGap = parseFloat(getComputedStyle(el).columnGap) || 0;
-    const step = first ? first.offsetWidth + columnGap : el.clientWidth;
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
     el.scrollBy({
-      left: direction * step,
-      behavior: reduceMotion ? "auto" : "smooth",
+      left: direction * getStep(el),
+      behavior: prefersReducedMotion() ? "auto" : "smooth",
     });
   };
 
-  // Panah disembunyiin kalau semua item sudah muat tanpa perlu digeser
+  const scrollToIndex = (i: number) => {
+    const el = trackRef.current;
+    if (!el) return;
+
+    el.scrollTo({
+      left: i * getStep(el),
+      behavior: prefersReducedMotion() ? "auto" : "smooth",
+    });
+  };
+
+  // Panah dan titik disembunyiin kalau semua item sudah muat
   const scrollable = canPrev || canNext;
 
   return (
@@ -171,7 +202,7 @@ export default function Carousel<T>({
         {/* Track: satu baris, bisa digeser, berhenti pas di tepi card */}
         <motion.div
           ref={trackRef}
-          onScroll={updateArrows}
+          onScroll={updateState}
           variants={trackVariants}
           initial="hidden"
           whileInView="show"
@@ -187,16 +218,44 @@ export default function Carousel<T>({
           }
           className="flex snap-x snap-mandatory overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
-          {items.map((item, index) => (
+          {items.map((item, i) => (
             <motion.div
-              key={getKey(item, index)}
+              key={getKey(item, i)}
               variants={itemVariants}
               className={`flex shrink-0 snap-start [&>*]:w-full ${itemClassName}`}
             >
-              {renderItem(item, index)}
+              {renderItem(item, i)}
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Titik indikator: jumlahnya = posisi geser yang bisa dicapai */}
+        {showDots && scrollable && count > 1 && (
+          <div
+            role="group"
+            aria-label="Choose slide"
+            className="mt-6 flex justify-center"
+          >
+            {Array.from({ length: count }, (_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => scrollToIndex(i)}
+                aria-label={`Go to slide ${i + 1} of ${count}`}
+                aria-current={i === index ? "true" : undefined}
+                className="group cursor-pointer p-1.5"
+              >
+                <span
+                  className={`block h-2 rounded-full transition-all duration-300 ${
+                    i === index
+                      ? "w-6 bg-lime-400"
+                      : "w-2 bg-gray-700 group-hover:bg-gray-500"
+                  }`}
+                />
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     </MotionConfig>
   );
