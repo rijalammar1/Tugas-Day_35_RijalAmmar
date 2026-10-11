@@ -72,9 +72,15 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-gray-800 bg-black/80 backdrop-blur-md">
       <div className="max-w-6xl mx-auto px-6 md:px-0 h-20 flex items-center justify-between">
+        {/* scroll={false}: Next.js nggak scroll sendiri (itu yang bikin halaman
+            berhenti 81px di bawah atas). Kita scroll ke paling atas manual. */}
         <Link
           href="/"
-          onClick={() => setOpen(false)}
+          scroll={false}
+          onClick={() => {
+            setOpen(false);
+            window.scrollTo({ top: 0 });
+          }}
           className="text-sm font-bold tracking-[0.2em] uppercase transition hover:text-lime-400"
         >
           Rijal Ammar
