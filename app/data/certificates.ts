@@ -21,7 +21,7 @@ export const certificates: Certificate[] = [
     description:
       "Built the Go Tumbler WordPress theme from the provided design with TailPress and Tailwind CSS, and optimized its performance for mobile and desktop.",
     image:
-      "/images/certificates/sertifikat Rijal Ammar Irsyadul Ibad_page-0001",
+      "/images/certificates/sertifikat Rijal Ammar Irsyadul Ibad_page-0001.jpg",
   },
   {
     title: "Frontend Developer Internship",

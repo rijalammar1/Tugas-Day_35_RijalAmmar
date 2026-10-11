@@ -33,13 +33,22 @@ import { TbApi } from "react-icons/tb";
 
 type Skill = {
   name: string;
-  icon: React.ComponentType<{ className?: string }>;
+  /** Opsional: chip tanpa icon tampil sebagai teks aja */
+  icon?: React.ComponentType<{ className?: string }>;
+};
+
+type SkillSection = {
+  /** Opsional: sub-judul kecil di dalam card */
+  label?: string;
+  items: Skill[];
 };
 
 type SkillGroup = {
   title: string;
   className: string;
-  items: Skill[];
+  /** Card utama (Frontend): border lime dan chip lebih besar */
+  emphasis?: boolean;
+  sections: SkillSection[];
 };
 
 const viewport = { once: true, margin: "0px 0px -60px 0px" };
@@ -57,7 +66,7 @@ const cardVariants: Variants = {
       delay: index * 0.1,
       // chip di dalam card nyusul satu-satu setelah card muncul
       delayChildren: index * 0.1 + 0.25,
-      staggerChildren: 0.07,
+      staggerChildren: 0.05,
     },
   }),
 };
@@ -96,60 +105,107 @@ function Reveal({
   );
 }
 
+/* ---------- Chip ---------- */
+
+function Chip({ skill, emphasis }: { skill: Skill; emphasis?: boolean }) {
+  const Icon = skill.icon;
+
+  return (
+    <motion.div
+      variants={chipVariants}
+      whileHover={{ y: -3 }}
+      transition={{ type: "spring", stiffness: 400, damping: 18 }}
+      className={`group flex items-center gap-2 border rounded-full transition-colors hover:border-lime-400/60 hover:bg-lime-400/5 ${
+        emphasis
+          ? "px-4 py-2 text-sm border-gray-700"
+          : "px-3 py-1.5 text-xs border-gray-800"
+      }`}
+    >
+      {Icon && (
+        <Icon
+          className={`transition-colors group-hover:text-lime-400 ${
+            emphasis ? "text-gray-400 text-base" : "text-gray-500 text-sm"
+          }`}
+        />
+      )}
+
+      <span
+        className={`transition-colors group-hover:text-white ${
+          emphasis ? "text-gray-300" : "text-gray-400"
+        }`}
+      >
+        {skill.name}
+      </span>
+    </motion.div>
+  );
+}
+
 /* ---------- Data ---------- */
 
 const skillGroups: SkillGroup[] = [
   {
     title: "Frontend",
-    className: "md:col-span-2 lg:row-span-2",
-    items: [
-      { name: "HTML", icon: FaHtml5 },
-      { name: "CSS", icon: FaCss3Alt },
-      { name: "JavaScript", icon: FaJs },
-      { name: "TypeScript", icon: SiTypescript },
-      { name: "React", icon: FaReact },
-      { name: "Next.js", icon: SiNextdotjs },
-      { name: "Redux", icon: SiRedux },
-      { name: "Tailwind CSS", icon: SiTailwindcss },
+    className: "md:col-span-2 lg:col-span-3",
+    emphasis: true,
+    sections: [
+      {
+        label: "Core stack",
+        items: [
+          { name: "HTML", icon: FaHtml5 },
+          { name: "CSS", icon: FaCss3Alt },
+          { name: "JavaScript", icon: FaJs },
+          { name: "TypeScript", icon: SiTypescript },
+          { name: "React", icon: FaReact },
+          { name: "Next.js", icon: SiNextdotjs },
+          { name: "Redux", icon: SiRedux },
+          { name: "Tailwind CSS", icon: SiTailwindcss },
+        ],
+      },
+      {
+        label: "Craft",
+        items: [
+          { name: "Responsive Design" },
+          { name: "Accessibility" },
+          { name: "Web Performance" },
+          { name: "SEO" },
+          { name: "UI Implementation" },
+        ],
+      },
     ],
   },
   {
-    title: "WordPress",
-    className: "",
-    items: [
-      { name: "WordPress", icon: SiWordpress },
-      { name: "TailPress", icon: SiTailwindcss },
-      { name: "WooCommerce", icon: SiWoocommerce },
+    title: "Design & Tools",
+    className: "md:col-span-2 lg:col-span-1",
+    sections: [
+      {
+        items: [
+          { name: "Figma", icon: SiFigma },
+          { name: "Git", icon: FaGitAlt },
+          { name: "GitHub", icon: FaGithub },
+          { name: "GitLab", icon: FaGitlab },
+          { name: "ClickUp", icon: SiClickup },
+        ],
+      },
     ],
   },
   {
-    title: "Backend",
-    className: "",
-    items: [
-      { name: "Node.js", icon: FaNodeJs },
-      { name: "Express.js", icon: SiExpress },
-      { name: "PHP", icon: SiPhp },
-      { name: "Laravel", icon: SiLaravel },
-      { name: "REST API", icon: TbApi },
-    ],
-  },
-  {
-    title: "Mobile",
-    className: "",
-    items: [
-      { name: "Flutter", icon: SiFlutter },
-      { name: "Dart", icon: SiDart },
-    ],
-  },
-  {
-    title: "Tools",
-    className: "lg:col-span-2",
-    items: [
-      { name: "Git", icon: FaGitAlt },
-      { name: "GitHub", icon: FaGithub },
-      { name: "GitLab", icon: FaGitlab },
-      { name: "Figma", icon: SiFigma },
-      { name: "ClickUp", icon: SiClickup },
+    title: "Also Worked With",
+    className: "md:col-span-2 lg:col-span-2",
+    sections: [
+      {
+        items: [
+          { name: "Node.js", icon: FaNodeJs },
+          { name: "Express.js", icon: SiExpress },
+          { name: "PHP", icon: SiPhp },
+          { name: "Laravel", icon: SiLaravel },
+          { name: "REST API", icon: TbApi },
+          { name: "WordPress", icon: SiWordpress },
+          { name: "TailPress", icon: SiTailwindcss },
+          { name: "WooCommerce", icon: SiWoocommerce },
+          { name: "Flutter", icon: SiFlutter },
+          { name: "Dart", icon: SiDart },
+        ],
+      },
     ],
   },
 ];
@@ -195,53 +251,84 @@ export default function About() {
             </Reveal>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {skillGroups.map((group, i) => (
-                <motion.div
-                  key={group.title}
-                  custom={i}
-                  variants={cardVariants}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={viewport}
-                  className={`flex flex-col border border-gray-800 rounded-2xl p-6 md:p-8 bg-zinc-900/40 transition-colors hover:border-gray-700 ${group.className}`}
-                >
-                  <div className="flex items-center justify-between mb-6">
-                    <h4 className="text-lg font-semibold text-lime-400">
-                      {group.title}
-                    </h4>
+              {skillGroups.map((group, i) => {
+                const total = group.sections.reduce(
+                  (sum, section) => sum + section.items.length,
+                  0,
+                );
 
-                    <span className="text-xs text-gray-500 tabular-nums">
-                      {String(group.items.length).padStart(2, "0")}
-                    </span>
-                  </div>
-
-                  <div className="flex flex-wrap content-start gap-3">
-                    {group.items.map((skill) => {
-                      const Icon = skill.icon;
-
-                      return (
-                        <motion.div
-                          key={skill.name}
-                          variants={chipVariants}
-                          whileHover={{ y: -3 }}
-                          transition={{
-                            type: "spring",
-                            stiffness: 400,
-                            damping: 18,
-                          }}
-                          className="group flex items-center gap-2 px-4 py-2 border border-gray-700 rounded-full text-sm transition-colors hover:border-lime-400/60 hover:bg-lime-400/5"
+                return (
+                  <motion.div
+                    key={group.title}
+                    custom={i}
+                    variants={cardVariants}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={viewport}
+                    className={`flex flex-col rounded-2xl border p-6 md:p-8 transition-colors ${
+                      group.emphasis
+                        ? "border-lime-400/30 bg-lime-400/5 hover:border-lime-400/50"
+                        : "border-gray-800 bg-zinc-900/30 hover:border-gray-700"
+                    } ${group.className}`}
+                  >
+                    <div className="mb-6 flex items-center justify-between gap-4">
+                      <div className="flex items-center gap-3">
+                        <h4
+                          className={`font-semibold ${
+                            group.emphasis
+                              ? "text-lg text-lime-400"
+                              : "text-base text-gray-300"
+                          }`}
                         >
-                          <Icon className="text-gray-400 text-base transition-colors group-hover:text-lime-400" />
+                          {group.title}
+                        </h4>
 
-                          <span className="text-gray-300 transition-colors group-hover:text-white">
-                            {skill.name}
+                        {group.emphasis && (
+                          <span className="rounded-full border border-lime-400/40 px-2.5 py-0.5 text-[10px] uppercase tracking-wider text-lime-400">
+                            Main focus
                           </span>
-                        </motion.div>
-                      );
-                    })}
-                  </div>
-                </motion.div>
-              ))}
+                        )}
+                      </div>
+
+                      <span className="text-xs text-gray-500 tabular-nums">
+                        {String(total).padStart(2, "0")}
+                      </span>
+                    </div>
+
+                    <div
+                      className={`grid gap-8 ${
+                        group.sections.length > 1
+                          ? "md:grid-cols-[1.4fr_1fr]"
+                          : ""
+                      }`}
+                    >
+                      {group.sections.map((section, s) => (
+                        <div key={s}>
+                          {section.label && (
+                            <p className="mb-4 text-xs uppercase tracking-wider text-gray-500">
+                              {section.label}
+                            </p>
+                          )}
+
+                          <div
+                            className={`flex flex-wrap content-start ${
+                              group.emphasis ? "gap-3" : "gap-2"
+                            }`}
+                          >
+                            {section.items.map((skill) => (
+                              <Chip
+                                key={skill.name}
+                                skill={skill}
+                                emphasis={group.emphasis}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>
